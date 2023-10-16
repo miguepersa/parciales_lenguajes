@@ -4,23 +4,35 @@
 ```python client.py <CANTIDAD_DE_MEMORIA>```
 
 ### Comandos
-Reservar CANTIDAD de memoria y asignarle NOMBRE
-```RESERVAR <CANTIDAD> <NOMBRE>```
+Reservar CANTIDAD de memoria y asignarle NOMBRE: 
+```
+RESERVAR <CANTIDAD> <NOMBRE>
+```
 
-Liberar el espacio de memoria que tenga asignado NOMBRE
-```LIBERAR <NOMBRE>```
+Liberar el espacio de memoria que tenga asignado NOMBRE: 
+```
+LIBERAR <NOMBRE>
+```
 
-Mostrar el estado actual del sistema
-```MOSTRAR```
+Mostrar el estado actual del sistema: 
+```
+MOSTRAR
+```
 
-Terminar la ejecucion del sistema
-```SALIR```
+Terminar la ejecucion del sistema: 
+```
+SALIR
+```
 
 ### Tests
 Se requiere tener instalado pytest en el sistema. Para instalarlo, ejecutar:
 `pip install pytest`
 
 Para ejecutar los tests:
-```pytest```
+```
+pytest
+```
 o
-```python -m pytest```
+```
+python -m pytest
+```
