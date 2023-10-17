@@ -25,21 +25,9 @@ rotar(String, Nrotar) = StringRotado :-
 
     
 main(!IO) :-
-    io.write_string("Indique la palabra que quiere rotar: ", !IO),
-    io.read_line_as_string(Res, !IO),
-    (
-        if Res = ok(Palabra) then
-            io.write_string("Indique el numero de espacios a rotar: ", !IO),
-            io.read_binary_int8(Rotar, !IO),
-            (if Rotar = ok(Nrot) then
-                Rotada = rotar(string.left(Palabra, length(Palabra)-1), int8.cast_to_int(Nrot) - 48),
-                io.write_string(Rotada ++ "\n", !IO)
-
-            else
-                io.write_string("Entrada invalida\n", !IO)
-
-            )
-        else
-        io.write_string("Error\n", !IO)
-    ).
-    
+    io.write_string("Se rotará la palabra \"lenguaje\" 3 posiciones: ", !IO),
+    Rotada1 = rotar("lenguaje", 3),
+    io.write_string(Rotada1 ++ "\n", !IO),
+    io.write_string("Se rotará la palabra \"telefono\" 5 posiciones: ", !IO),
+    Rotada2 = rotar("telefono", 5),
+    io.write_string(Rotada2 ++ "\n", !IO).
