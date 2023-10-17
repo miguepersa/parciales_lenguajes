@@ -1,7 +1,0 @@
-:- module rotate.
-:- interface.
-:- use_module io.
-:- use_module string.
-:- pred main(io.io, io.io).
-:- mode main((builtin.di), (builtin.uo)) is det.
-:- func rotar(string, int) = string.
