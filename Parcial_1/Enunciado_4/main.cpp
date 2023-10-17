@@ -17,6 +17,8 @@ int main(int argc, char const *argv[])
     cout << "(a + a) * (b - a) = " << (vector1 + vector1) * (vector2 - vector1) << endl;
     cout << "a * (a % b) = " << vector1 * (vector1 % vector2) << endl;
     cout << "&a = " << &vector1 << endl;
+    cout << "a - 1 = " << vector1 - 1 << endl;
+    cout << "b + 5 = " << vector2 + 5 << endl;
 
     return 0;
 }
