@@ -1,10 +1,7 @@
 from BuddySystem import BuddySystem
 import pytest
 
-# importar BuddySystem
-import BuddySystem
-import pytest
-bs = BuddySystem.BuddySystem(55)
+bs = BuddySystem(55)
 
 # Test de reserva
 def test_RESERVAR_0():
