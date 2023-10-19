@@ -1,0 +1,1 @@
+Respuestas de las preguntas teoricas: https://docs.google.com/document/d/1r0g8PVsIAkxL8juyxiQDkv6048v1PppIy5roPHuUNK8/edit?usp=sharing
