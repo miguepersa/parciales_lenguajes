@@ -125,3 +125,22 @@ def mostrar(arbol: Arbol):
     if es_numero(arbol.l.val) and es_numero(arbol.r.val):
         return f"({mostrar(arbol.l)} {arbol.val} {mostrar(arbol.r)})"
 
+    return f"{mostrar(arbol.l)} {arbol.val} {mostrar(arbol.r)}"
+
+def validar_expresion(string: str):
+    '''
+    Valida que la expresion sea solo de numeros u operadores binarios
+    soportados por el programa (+, -, *, /) 
+
+
+    Args:
+        string (str): La expresion a ser evaluada
+
+    Retorna:
+        bool: La expresion es valida o no
+    '''
+
+
+    flag = sum(1 for i in string if i.isalnum()) -1 == sum(1 for i in string if i in "+-*/")
+    
+    return not any(i.isalpha() for i in string) and flag
