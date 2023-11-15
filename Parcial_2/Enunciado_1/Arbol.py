@@ -1,6 +1,10 @@
 class Arbol(object):
 
     def __init__(self, val: int, l=None, r=None):
+
+        if (l is not None and not isinstance(l, Arbol)) or (r is not None and not isinstance(r, Arbol)):
+            raise TypeError("Los valores de las ramas deben ser instancias de la clase Arbol")
+
         self.l = l
         self.r = r
         self.val = val
