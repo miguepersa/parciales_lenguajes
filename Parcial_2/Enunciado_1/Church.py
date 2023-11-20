@@ -27,3 +27,9 @@ class Church(object):
     def __mul__(self, other):
         k = other.n * self.n
         return Church(n=k)
+    
+    def __str__(self):
+        if (self.val):
+            return f"Suc({str(self.val)})"
+        
+        return "Zero"
