@@ -1,14 +1,12 @@
 import os
 from threading import Thread, Lock
 
-lock_threads = Lock()
 lock_results = Lock()
 
-result = 0
-threads = []
+results = []
 
-def contador(path='.'):
-    print(path)
+def contador(path='.', results=results):
+    #print(path)
     if not os.path.isdir(path):
         raise Exception("la direccion dada no es un directorio")
 
@@ -17,28 +15,22 @@ def contador(path='.'):
 
     for f in os.listdir(path):
 
-        if os.path.isfile(f):
+        if os.path.isfile(os.path.join(path,f)):
             files.append(f)
-        else:
+        elif os.path.isdir(os.path.join(path,f)):
             folders.append(f)
 
-    print(folders)
-    print(files)
+    for f in folders:
+        t = Thread(target=contador, args=(os.path.join(path,f),results))
+        t.start()
+        t.join()
 
-    # for f in folders:
-    #     t = Thread(target=contador, args=(os.path.join(path,f),))
-    #     lock_threads.acquire()
-    #     threads.append(t)
-    #     lock_threads.release()
-    #     t.start()
-    #     t.join()
-
-    # lock_results.acquire()
-    # result += len(files)
-    # lock_results.release()
+    lock_results.acquire()
+    results.append(len(files))
+    lock_results.release()
 
 
-contador("../../Parcial_2/Enunciado_1/")
+contador('../../', results)
 
-print(result)
+print(sum(results))
     
