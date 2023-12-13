@@ -29,8 +29,9 @@ def contador(path='.', results=results):
     results.append(len(files))
     lock_results.release()
 
+path = input("Ingrese la ruta para contar: ")
 
-contador('../../', results)
+contador(path, results)
 
 print(sum(results))
     
