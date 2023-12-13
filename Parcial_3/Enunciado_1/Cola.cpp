@@ -1,25 +1,26 @@
 #include "Cola.hpp"
 
-template <typename T> Cola<T>::Cola() : Secuencia()
+Cola::Cola() : Secuencia()
 {
 }
 
-template <typename T> Cola<T>::~Cola()
+Cola::~Cola()
 {
 }
 
-template <typename T> void Cola<T>::agregar(T elemento){
-    elementos.push_back(elemento);
-    n_elementos++;
+void Cola::agregar(int elemento){
+    this->elementos.push_back(elemento);
+    this->n_elementos++;
 }
 
-template <typename T> T Cola<T>::remover(){
-    if (n_elementos > 0){
-        T elem = elementos[0];
-        n_elementos--;
-        elementos.erase(elementos.begin())
+int Cola::remover(){
+    if (this->n_elementos > 0){
+        int elem = this->elementos[0];
+        this->n_elementos--;
+        this->elementos.erase(this->elementos.begin());
         return elem;
     }
 
-    return (T)-1;
+    cout << "Pila Vacia" << endl;
+    return (int)-1;
 }

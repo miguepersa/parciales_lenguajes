@@ -1,19 +1,19 @@
-#ifndef DFS_HPP
-#define DFS_HPP
+#ifndef BFS_HPP
+#define BFS_HPP
 
 #include "Busqueda.hpp"
 #include "Secuencia.hpp"
-#include "Pila.hpp"
+#include "Cola.hpp"
 
 using namespace std;
 
-class DFS : public Busqueda
+class BFS : public Busqueda
 {
 private:
 
 public:
-    DFS(Grafo*);
-    ~DFS();
+    BFS(Grafo*);
+    ~BFS();
     int buscar(int, int);
 };
 

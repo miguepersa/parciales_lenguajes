@@ -3,16 +3,18 @@
 
 #include "Secuencia.hpp"
 
-template <typename T> class Cola: Secuencia<T>
+using namespace std;
+
+class Cola: public Secuencia
 {
 private:
-    /* data */
+
 public:
-    Cola(/* args */);
+    Cola();
     ~Cola();
 
-    void agregar(T elemento);
-    T remover();
+    void agregar(int elemento);
+    int remover();
 };
 
 #endif

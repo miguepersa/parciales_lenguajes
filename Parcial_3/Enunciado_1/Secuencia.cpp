@@ -1,13 +1,13 @@
 #include "Secuencia.hpp"
 
-template <typename T> Secuencia<T>::Secuencia(/* args */) : n_elementos(0)
+Secuencia::Secuencia() : n_elementos(0)
 {
 }
 
-template <typename T> Secuencia<T>::~Secuencia()
+Secuencia::~Secuencia()
 {
 }
 
-template <typename T> bool Secuencia<T>::vacio(){
+bool Secuencia::vacio(){
     return n_elementos == 0;
 }

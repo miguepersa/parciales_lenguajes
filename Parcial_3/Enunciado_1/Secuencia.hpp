@@ -1,24 +1,22 @@
 #ifndef SECUENCIA_HPP
 #define SECUENCIA_HPP
 
-using namespace std;
-
 #include <vector>
 #include <iostream>
 
-template <typename T> class Secuencia
+class Secuencia
 {
 protected:
     
-    vector<T> elementos;
+    std::vector<int> elementos;
     int n_elementos;
 
 public:
-    Secuencia(/* args */);
+    Secuencia();
     ~Secuencia();
 
-    virtual void agregar(T elemento);
-    virtual T remover();
+    virtual void agregar(int elemento) = 0;
+    virtual int remover() = 0;
     bool vacio();
 
 };

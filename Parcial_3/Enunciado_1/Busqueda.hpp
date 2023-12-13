@@ -13,7 +13,7 @@ public:
     Busqueda(Grafo*);
     ~Busqueda();
     
-    virtual int buscar(int, int);
+    virtual int buscar(int, int) = 0;
 };
 
 

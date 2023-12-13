@@ -5,16 +5,16 @@
 
 using namespace std;
 
-template <typename T> class Pila: public Secuencia<T>
+class Pila: public Secuencia
 {
 private:
-    /* data */
+
 public:
-    Pila(/* args */);
+    Pila();
     ~Pila();
 
-    void agregar(T elemento);
-    T remover();
+    void agregar(int elemento);
+    int remover();
 };
 
 
