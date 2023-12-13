@@ -156,7 +156,7 @@ En C++, la asociación dinámica se logra mediante el uso de funciones virtuales
 ### Jerarquía de Tipos en C++:
 
 #### 1. **Herencia:**
-   - C++ admite herencia, lo que significa que puedes crear nuevas clases basadas en clases existentes. La herencia permite que una clase herede atributos y comportamientos de otra clase.
+   - C++ admite herencia.
 
      ```cpp
      class Animal {
@@ -171,7 +171,7 @@ En C++, la asociación dinámica se logra mediante el uso de funciones virtuales
      ```
 
 #### 2. **Herencia Múltiple:**
-   - C++ permite la herencia múltiple, lo que significa que una clase puede heredar de múltiples clases base. Esto permite la combinación de características de varias clases en una nueva clase.
+   - C++ permite la herencia múltiple.
 
      ```cpp
      class Ave {
@@ -199,8 +199,6 @@ En C++, la asociación dinámica se logra mediante el uso de funciones virtuales
            void dibujar() override { /* código específico para dibujar un círculo */ }
        };
        ```
-
-     - **Polimorfismo de tiempo de compilación (estático):** Se logra mediante sobrecarga de funciones y plantillas (si se considera el polimorfismo paramétrico).
 
 #### 4. **Polimorfismo Paramétrico:**
    - C++ admite polimorfismo paramétrico a través de plantillas. Puedes crear funciones o clases que trabajen con tipos genéricos.
