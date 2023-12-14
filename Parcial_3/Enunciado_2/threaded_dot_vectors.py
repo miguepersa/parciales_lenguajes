@@ -31,11 +31,22 @@ def threaded_dot_product(vec1: list, vec2: list, n_threads = 1):
     
     else:
         if len(vec1) % n_threads == 0:
-            threads = [Thread(target=dot_product, args=(vec1[i:i+n_threads], vec2[i:i+n_threads], i%n_threads, results)) for i in range(0, len(vec1), n_threads)]
+            print("aqui")
+            threads = []
+            k = 0
+            for i in range(0, len(vec1), n_threads):
+                threads.append(Thread(target=dot_product, args=(vec1[i:i+n_threads], vec2[i:i+n_threads], k, results)))
+                k+=1
 
         else:
-            threads = [Thread(target=dot_product, args=(vec1[i:i+n_threads], vec2[i:i+n_threads], i%n_threads, results)) for i in range(0, len(vec1), n_threads)]
-            threads.append(Thread(target=dot_product, args=(vec1[n_threads*len(threads):], vec2[n_threads*len(threads):], n_threads-1, results)))
+            threads = []
+            k = 0
+            
+            for i in range(0, len(vec1), n_threads):
+                threads.append(Thread(target=dot_product, args=(vec1[i:i+n_threads], vec2[i:i+n_threads], k, results)))
+                k+=1
+            
+            threads.append(Thread(target=dot_product, args=(vec1[n_threads*len(threads):], vec2[n_threads*len(threads):], k, results)))
 
     # Start the threads
     for thread in threads:
@@ -49,8 +60,8 @@ def threaded_dot_product(vec1: list, vec2: list, n_threads = 1):
     return sum(results)
 
 # Example usage
-vec1 = [1, 2, 3]
-vec2 = [4, 5, 6]
+vec1 = [1, 2, 3, 4]
+vec2 = [4, 5, 6, 7]
 
-result = threaded_dot_product(vec1, vec2, 3)
+result = threaded_dot_product(vec1, vec2, 4)
 print("Dot product:", result)
